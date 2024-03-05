@@ -1,0 +1,9 @@
+<header class="flags__header" >
+  <div class="flags__header__wrapper">
+    <h1 class="flags__header__wrapper-title">Where in the world?</h1>
+    <button class="flags__header__wrapper-subheader" (click)="toggleMode()" >
+      <img  src="./assets/flags/{{(isDarkMode$ | async) ? 'moon-active' : 'moon-inactive'}}.png" alt="">
+      <span>Dark Mode</span>
+    </button>
+  </div>
+</header>
