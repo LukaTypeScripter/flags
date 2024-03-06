@@ -1,0 +1,51 @@
+.flags__search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+  &-find {
+    display: flex;
+    align-items: center;
+    padding-inline: 0.5em;
+    width: min(600px, 100%);
+    background-color: var(--appbar);
+    border-radius: 10px;
+    img{
+      width: 16px;
+      height: 16px;
+    }
+    input {
+      outline: none;
+      border: none;
+      padding-block: 1.6em;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 500;
+      background-color: hsla(0, 0%, 0%, 0);
+      color: inherit;
+      margin-inline: 10px;
+    }
+    input:focus {
+      color: var(--text);
+    }
+  }
+  &-countries {
+    select {
+      border: none;
+      border-radius: 10px;
+      padding: 1.5em 1.2em;
+      font-size: inherit;
+      font-family: inherit;
+      color: var(--text);
+      background-color: var(--appbar);
+      option {
+        background-color: var(--appbar);
+        color: var(--text);
+      }
+
+    }
+
+
+  }
+}

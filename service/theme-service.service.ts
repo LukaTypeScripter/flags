@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 
-@Injectable({git init
+@Injectable({
   providedIn: 'root'
 })
 export class ThemeServiceService {

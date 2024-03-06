@@ -1,1 +1,16 @@
-<p>flags-search works!</p>
+<div class="flags__search">
+    <div class="flags__search-find">
+      <img src="./assets/flags/search-{{(themeService.$isDarkMode | async) ? 'inactive' : 'active'}}.png" alt="">
+      <input type="text" placeholder="search flags">
+    </div>
+    <div class="flags__search-countries">
+      <select id="standard-select">
+        <option value="">Filter by Region</option>
+        <option value="africa">Africa</option>
+        <option value="americas">Americas</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+      </select>
+    </div>
+</div>

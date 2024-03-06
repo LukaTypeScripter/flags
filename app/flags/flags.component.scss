@@ -1,8 +1,9 @@
 .flags {
-  &--header {
+  &-header {
 
   }
-  &--search {
-
+  &-search {
+    background-color:var(--app-background) ;
+    height: 100vh;
   }
 }
