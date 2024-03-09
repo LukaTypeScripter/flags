@@ -1,7 +1,7 @@
 <div class="flags__search">
     <div class="flags__search-find">
       <img src="./assets/flags/search-{{(themeService.$isDarkMode | async) ? 'inactive' : 'active'}}.png" alt="">
-      <input type="text" placeholder="search flags">
+      <input [(ngModel)]="input" (input)="search()"   type="text" placeholder="search flags">
     </div>
     <div class="flags__search-countries">
       <select id="standard-select">

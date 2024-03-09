@@ -1,5 +1,5 @@
-<div class="flags__list" *ngIf="flags$ | async as flag">
-  <div class="flags__list__card" *ngFor="let flags of flag">
+<div class="flags__list" >
+  <div class="flags__list__card" *ngFor="let flags of flag()">
     <picture>
       <img src="{{flags.flags.svg}}" loading="lazy"  />
     </picture>

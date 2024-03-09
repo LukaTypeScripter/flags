@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, input, Input, signal} from '@angular/core';
 import {CampaignService} from "../../../service/campaign.service";
 import {map, Observable} from "rxjs";
 import {CommonModule} from "@angular/common";
@@ -11,12 +11,5 @@ import {CommonModule} from "@angular/common";
   styleUrl: './flags-list.component.scss'
 })
 export class FlagsListComponent {
-  flags$!:Observable<any>
-  constructor(private campaignService: CampaignService) {
-    this.getFlags()
-  }
-
-  getFlags() {
-    this.flags$ = this.campaignService.getFlags().pipe(map((res) => res));
-  }
+  flag = input<any>()
 }

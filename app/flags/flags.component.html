@@ -5,8 +5,8 @@
   </div>
 
   <div class="flags-search">
-    <app-flags-search />
-    <app-flags-list />
+    <app-flags-search (inputValue)="getFlags($event)"/>
+    <app-flags-list *ngIf="flags$ | async as flags" [flag]="flags"  />
   </div>
 
 

@@ -8,8 +8,9 @@ import {map} from "rxjs";
 export class CampaignService {
 
   constructor(private http:HttpClient) { }
-  getFlags() {
-    return this.http.get("https://restcountries.com/v3.1//all").pipe(map((res) => {
+
+  getFlags(fillterType: string | undefined) {
+    return this.http.get(`https://restcountries.com/v3.1${fillterType ? '/name/' +fillterType : '//' +'all' }`).pipe(map((res) => {
       return res
     }))
   }
