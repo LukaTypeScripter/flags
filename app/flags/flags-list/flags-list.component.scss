@@ -3,6 +3,8 @@
   grid-template-columns: repeat(auto-fill,300px);
   gap: 2.8em 1em;
   padding: 1.5rem;
+  width: 100vw;
+  justify-content: center;
   &__info {
     padding: 2em 1.2em;
     &-republic, &-desc  {
@@ -13,7 +15,13 @@
     background-color: var(--appbar);
     border-radius:10px;
     cursor: pointer;
-
+    picture {
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 158px;
+      }
+    }
     &-desc {
     }
   }

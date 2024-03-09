@@ -1,8 +1,7 @@
-<div class="flags__list">
-
-  <div class="flags__list__card">
+<div class="flags__list" *ngIf="flags$ | async as flag">
+  <div class="flags__list__card" *ngFor="let flags of flag">
     <picture>
-      <img  src="favicon.ico" loading="lazy" />
+      <img src="{{flags.flags.svg}}" loading="lazy"  />
     </picture>
     <div class="flags__list__info">
       <h2 class="flags__list__info-republic">Republic of Cyprus</h2>
@@ -13,6 +12,4 @@
       <p class="flags__list__info-desc" >subRegion:<span>Europe</span></p>
     </div>
   </div>
-
-
 </div>
