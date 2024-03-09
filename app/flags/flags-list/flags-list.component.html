@@ -1,7 +1,7 @@
 <div class="flags__list" >
   <div class="flags__list__card" *ngFor="let flags of flag()">
     <picture>
-      <img src="{{flags.flags.svg}}" loading="lazy"  />
+      <img src="{{flags.flags.svg}}" loading="lazy"   alt="{{flags.flags.alt}}"/>
     </picture>
     <div class="flags__list__info">
       <h2 class="flags__list__info-republic">Republic of Cyprus</h2>

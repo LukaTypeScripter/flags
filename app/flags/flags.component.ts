@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FlagsHeaderComponent} from "./flags-header/flags-header.component";
 import {FlagsSearchComponent} from "./flags-search/flags-search.component";
 import {FlagsListComponent} from "./flags-list/flags-list.component";
-import { Observable, of, switchMap, throttleTime} from "rxjs";
+import { Observable, of, switchMap} from "rxjs";
 import {CampaignService} from "../../service/campaign.service";
 import {CommonModule} from "@angular/common";
 

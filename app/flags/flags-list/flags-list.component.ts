@@ -1,6 +1,4 @@
-import {Component, input, Input, signal} from '@angular/core';
-import {CampaignService} from "../../../service/campaign.service";
-import {map, Observable} from "rxjs";
+import {Component, input} from '@angular/core';
 import {CommonModule} from "@angular/common";
 
 @Component({

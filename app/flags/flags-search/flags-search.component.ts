@@ -1,7 +1,6 @@
-import {Component, EventEmitter, Inject, Output} from '@angular/core';
-import {Observable} from "rxjs";
+import {Component, EventEmitter, Output} from '@angular/core';
 import {ThemeServiceService} from "../../../service/theme-service.service";
-import {AsyncPipe, CommonModule} from "@angular/common";
+import { CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 
 @Component({
