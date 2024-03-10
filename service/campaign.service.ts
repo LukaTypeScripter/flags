@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map} from "rxjs";
+import {BehaviorSubject, map, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CampaignService {
-
+  $search = new Subject()
+  skeleton = new BehaviorSubject(false)
   constructor(private http:HttpClient) { }
 
   getFlags(fillterType: string | undefined) {

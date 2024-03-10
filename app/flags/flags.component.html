@@ -1,14 +1,16 @@
 <div class="flags">
 
   <div class="flags-header">
-    <app-flags-header />
+    <app-flags-header></app-flags-header>
   </div>
 
   <div class="flags-search">
-    <app-flags-search (inputValue)="getFlags($event)"/>
-    <app-flags-list *ngIf="flags$ | async as flags" [flag]="flags"  />
+    <app-flags-search (inputValue)="getFlags($event)"></app-flags-search>
+    <div *ngIf="(skeleton | async)" class="skeleton">
+      <ng-container *ngFor="let _ of [].constructor(8); let i = index">
+        <app-skeleton></app-skeleton>
+      </ng-container>
+    </div>
+      <app-flags-list [flag]="flags$ | async"></app-flags-list>
   </div>
-
-
-
 </div>
