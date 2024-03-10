@@ -2,11 +2,11 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { FlagsHeaderComponent } from './flags-header/flags-header.component';
 import { FlagsSearchComponent } from './flags-search/flags-search.component';
 import { FlagsListComponent } from './flags-list/flags-list.component';
-import { catchError, Observable, of, switchMap, throwError } from 'rxjs';
+import {  Observable, of, switchMap } from 'rxjs';
 import { CampaignService } from '../../service/campaign.service';
 import { CommonModule } from '@angular/common';
 import {SkeletonComponent} from "./skeleton/skeleton.component";
-;
+
 
 @Component({
   selector: 'app-flags',
@@ -19,7 +19,7 @@ export class FlagsComponent {
   flags$!: Observable<any>;
   skeleton: Observable<boolean> = this.campaignService.skeleton.asObservable();
 
-  constructor(private campaignService: CampaignService, private cdr: ChangeDetectorRef) {
+  constructor(private campaignService: CampaignService) {
     this.getFlags();
   }
 

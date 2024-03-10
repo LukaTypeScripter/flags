@@ -24,7 +24,7 @@ export class FlagsSearchComponent extends unsub{
     this.listenInput();
   }
   listenInput() {
-    this.campaignService.$search.pipe(debounceTime(500),distinctUntilChanged(),map((res) => {
+    this.campaignService.$search.pipe(debounceTime(500),distinctUntilChanged(),map((_) => {
       const searchTerm: string = this.input;
       this.inputValue.emit(searchTerm);
     }),takeUntil(this.unsubscribe$)).subscribe()
