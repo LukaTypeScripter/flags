@@ -2,10 +2,11 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { FlagsHeaderComponent } from './flags-header/flags-header.component';
 import { FlagsSearchComponent } from './flags-search/flags-search.component';
 import { FlagsListComponent } from './flags-list/flags-list.component';
-import {  Observable, of, switchMap } from 'rxjs';
+import {catchError, Observable, of, switchMap} from 'rxjs';
 import { CampaignService } from '../../service/campaign.service';
 import { CommonModule } from '@angular/common';
 import {SkeletonComponent} from "./skeleton/skeleton.component";
+import {CountryInfo} from "../../shared/models/country.model";
 
 
 @Component({
@@ -18,18 +19,25 @@ import {SkeletonComponent} from "./skeleton/skeleton.component";
 export class FlagsComponent {
   flags$!: Observable<any>;
   skeleton: Observable<boolean> = this.campaignService.skeleton.asObservable();
-
+  isError: boolean = false;
   constructor(private campaignService: CampaignService) {
     this.getFlags();
   }
 
-  getFlags(e?: string) {
+  getFlags(e:string[] = ['//','all'] ) {
     this.campaignService.skeleton.next(true);
-    this.flags$ = this.campaignService.getFlags(e).pipe(
-      switchMap((res: any) => {
-        this.campaignService.skeleton.next(false);
-        return of(Object.values(res));
-      })
-    );
-  }
+      this.flags$ = this.campaignService.getFlags(e[0], e[1]).pipe(
+        switchMap((res: CountryInfo) => {
+          console.log(res)
+          this.campaignService.skeleton.next(false);
+          this.isError = false
+          return of(Object.values(res));
+        }),
+        catchError((error: string) => {
+          this.campaignService.skeleton.next(false);
+          this.isError = true
+          return of([]);
+        })
+      );
+    }
 }

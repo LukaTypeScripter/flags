@@ -2,9 +2,33 @@
   &-header {
 
   }
-  &-search {
+  &__search {
     background-color:var(--app-background) ;
     height: 100vh;
+    &-skeleton {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,300px);
+      gap: 2.8em 1em;
+      padding: 1.5rem;
+      justify-content: center;
+    }
+    &-error {
+      width: 55%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -29%);
+      h2 {
+        font-size:5rem;
+        font-weight: 600;
+        color: var(--text);
+        text-align: center;
+
+      }
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 .skeleton {
@@ -13,4 +37,17 @@
   gap: 2.8em 1em;
   padding: 1.5rem;
   justify-content: center;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .flags {
+    &__search {
+      &-error {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 }

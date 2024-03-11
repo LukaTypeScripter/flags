@@ -1,5 +1,6 @@
 import {Component, input} from '@angular/core';
 import {CommonModule} from "@angular/common";
+import {CountryInfo} from "../../../shared/models/country.model";
 
 @Component({
   selector: 'app-flags-list',
@@ -9,5 +10,5 @@ import {CommonModule} from "@angular/common";
   styleUrl: './flags-list.component.scss'
 })
 export class FlagsListComponent {
-  flag = input<any>()
+  flag = input<CountryInfo[] | undefined>()
 }

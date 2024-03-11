@@ -3,8 +3,8 @@
       <img src="./assets/flags/search-{{(themeService.$isDarkMode | async) ? 'inactive' : 'active'}}.png" alt="">
       <input [(ngModel)]="input" (input)="search()"   type="text" placeholder="search flags">
     </div>
-    <div class="flags__search-countries">
-      <select id="standard-select">
+    <div class="flags__search-countries" >
+      <select id="standard-select" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
         <option value="">Filter by Region</option>
         <option value="africa">Africa</option>
         <option value="americas">Americas</option>

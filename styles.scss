@@ -1,3 +1,4 @@
+
 :root {
   --app-background: #fafafa;
   --appbar: #fff;
@@ -5,6 +6,7 @@
   --text: #111517;
   --input: #fff;
   --gradient: linear-gradient(90deg, #fff 0%, #eee 20%, #fff 40%, #fff);
+  --skeleton-color:#e7f1f9;
 }
 :root[data-theme=dark] {
   --app-background: #202c37;
@@ -13,10 +15,15 @@
   --text: #fff;
   --input: #858585;
   --gradient: linear-gradient(90deg, #2b3945 0%, #364655 20%, #2b3945 40%, #2b3945);
+  --skeleton-color:#858585;
 }
 * {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+body {
+  background-color: var(--app-background);
 }
