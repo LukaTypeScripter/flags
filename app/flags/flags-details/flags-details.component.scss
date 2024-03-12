@@ -1,0 +1,26 @@
+.details {
+  padding: 1.5rem;
+  &__go-back {
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: var(--appbar);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  &__main {
+    --card-max-width: 560px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2em;
+    img {
+      width: 560px;
+      height: 40%;
+      object-fit: cover;
+    }
+  }
+}

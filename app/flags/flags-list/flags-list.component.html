@@ -1,5 +1,5 @@
 <div class="flags__list" >
-  <div class="flags__list__card" *ngFor="let flags of flag()">
+  <div class="flags__list__card" *ngFor="let flags of flag()" (click)="navigateDetails(flags)">
     <picture>
       <img src="{{flags.flags.svg}}" loading="lazy"   alt="{{flags.flags.alt}}"/>
     </picture>

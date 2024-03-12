@@ -1,0 +1,12 @@
+<div class="details" >
+    <button class="details__go-back">
+      Go Back
+    </button>
+
+  <section class="details__main" *ngIf="specificFlag$ | async as flag">
+    <img src="{{flag.url}}" alt="*">
+    <div class="details__main__info">
+        <h2>{{flag.name}}</h2>
+    </div>
+  </section>
+</div>

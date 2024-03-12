@@ -2,6 +2,7 @@ export interface CountryInfo {
   altSpellings: string[];
   area: number;
   capital: string[];
+  borders:string[];
   capitalInfo: {
     latlng: [number, number];
   };
