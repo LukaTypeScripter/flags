@@ -17,7 +17,7 @@ import {CountryInfo} from "../../shared/models/country.model";
   styleUrls: ['./flags.component.scss'],
 })
 export class FlagsComponent {
-  flags$!: Observable<any>;
+  flags$!: Observable<CountryInfo[]>;
   skeleton: Observable<boolean> = this.campaignService.skeleton.asObservable();
   isError: boolean = false;
   constructor(private campaignService: CampaignService) {

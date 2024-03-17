@@ -1,5 +1,5 @@
 <div class="flags__list" >
-  <div class="flags__list__card" *ngFor="let flags of flag()" (click)="navigateDetails(flags)">
+  <div class="flags__list__card" *ngFor="let flags of flag() | paginate: { itemsPerPage: 10, currentPage: page }" (click)="navigateDetails(flags)">
     <picture>
       <img src="{{flags.flags.svg}}" loading="lazy"   alt="{{flags.flags.alt}}"/>
     </picture>
@@ -11,3 +11,5 @@
     </div>
   </div>
 </div>
+
+<pagination-controls (pageChange)="page = $event" [responsive]="true"></pagination-controls>
