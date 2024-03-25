@@ -4,9 +4,25 @@
     </button>
 
   <section class="details__main" *ngIf="specificFlag$ | async as flag">
-    <img src="{{flag.url}}" alt="*">
+    <img [src]="flag.url" alt="*">
     <div class="details__main__info">
-        <h2>{{flag.name}}</h2>
+      <div class="details__main__info-item">
+        <p>native name: {{flag.name}}</p>
+        <p>population: {{flag.population}}</p>
+        <p>subregion: {{flag.region}}</p>
+
+      </div>
+      <div class="details__main__info-item">
+        <p>language: {{flag.language}}</p>
+        <p>currencies: {{flag.currencies}}</p>
+        <span class="details__main__info-borders">borders:  </span>
+        <div  class="details__main__info-borders-border">
+          <span *ngFor="let  border of flag.borders" (click)="getBorder(border)">{{border}}</span>
+        </div>
+      </div>
+
+
     </div>
   </section>
+
 </div>

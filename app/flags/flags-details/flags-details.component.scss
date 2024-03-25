@@ -17,6 +17,26 @@
     justify-content: center;
     align-items: center;
     gap: 1.2em;
+    &__info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      &-borders {
+      &-border {
+        display: flex;
+        span {
+          padding: 0.5rem;
+          border: 1px solid var(--appbar);
+          background-color: var(--appbar);
+          cursor: pointer;
+          &:not(:first-child) {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+
+      }
+    }
     img {
       width: 560px;
       height: 40%;

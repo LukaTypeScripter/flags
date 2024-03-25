@@ -9,6 +9,7 @@ import {CountryInfo} from "../shared/models/country.model";
 export class CampaignService {
   $search = new Subject()
   skeleton = new BehaviorSubject(false)
+  borderChange = new BehaviorSubject('')
   constructor(private http:HttpClient) { }
 
   getFlags(fillterType: string,filterFrom:string): Observable<CountryInfo> {
